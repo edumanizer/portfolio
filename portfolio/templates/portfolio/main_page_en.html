@@ -1,0 +1,157 @@
+{% load static %}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en"> 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="{% static "portfolio/bootstrap/bootstrap.min.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "portfolio/style_en.css" %}">
+  <link rel="stylesheet" type="text/css" href="{% static "portfolio/bootstrap/fixed.css" %}">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <title>EDSV-Media - Professional Web-Development</title>
+</head>
+
+<body data-spy="scroll" data-target="#navbarResponsive">
+  <div id="home">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#"><img src="../static/portfolio/Images/logo.png"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#about">About me</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#services">What we do</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#contacts">Contacts</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="http://127.0.0.1:8000/ru">Russian version</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="landing">
+      <div class="home-wrap">
+        <div class="home-inner">
+        </div>
+      </div>
+    </div>
+    <div class="caption text-center">
+      <h1>Edgar Sidorov</h1>
+      <h3 align="center">Web-developer, who makes beautifull and functional websites</h3>
+      <a class="btn btn-outline-light btn-lg" href="#contacts">Contact me</a>
+    </div>
+    <div id="about" class="offset"> 
+      <div class="narrow">
+      <div class="col-12 narrow text-center">
+        <h1>Something about me</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-2">
+          <img src="../static/portfolio/Images/avatar.jpg">
+        </div>
+        <div class="col-lg-10 text-center" id="text-about">
+        <p class="lead">Hello, my name is Edgar an i am a full-stack web-developer, i'm developing websites from A to Z. If work isn't for me or i can't do it - i will never take this project, so you can be shure that all will be done fully and in timelines. thank you for your attention and i hope for succesfull cooperation!</p>
+      </div>
+      </div>
+    </div>
+      <div class="col-12 narrow text-center">
+        <a class="btn btn-secondary btn-md" href="#contacts">Send task</a>
+      </div>
+    </div>
+    <div id="services">
+      <div class="jumbotron">
+        <div class="narrow">
+          <div class="col-12 text-center">
+            <h3 class="heading">What we do</h3>
+            <div class="heading-underline"></div>
+          </div>
+          <div class="row text-center">
+            <div class="col-md-4">
+              <div class="feature">
+                <i class="fas fa-shopping-basket fa-4x red" data-fa-transform="shrink-3 up-5"></i>
+                <h3>online-shop</h3>
+                <p>Development of beautifull and functional online-shop</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature">
+                <i class="fas fa-address-card fa-4x red" data-fa-transform="shrink-3 up-5"></i>
+                <h3>Landing Page</h3>
+                <p>Beautifull and responsive Landing page with individual design</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="feature">
+                <i class="fas fa-blog fa-4x red" data-fa-transform="shrink-3 up-5"></i>
+                <h3>Blog</h3>
+                <p>Development of beautifull and functional Blog with extra features</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="devices" class="offset">
+      <div class="fixed-background">
+        <div class="row dark text-center">
+          <div class="col-12">
+            <h3 class="heading">Responsive and beautifull design</h3>
+            <div class="heading-underline"></div>
+          </div>
+          <div class="col-md-4">
+            <h3>HTML5</h3>
+            <div class="feature">
+              <i class="fas fa-code fa-3x red"></i>
+            </div>
+            <p class="lead">Logical structure</p>
+          </div>
+          <div class="col-md-4">
+            <h3>CSS</h3>
+            <div class="feature">
+              <i class="fab fa-css3 fa-3x red"></i>
+            </div>
+            <p class="lead">Beautifull design</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Javascript</h3>
+            <div class="feature">
+              <i class="fab fa-js fa-3x red"></i>
+            </div>
+            <p class="lead">Interactive pages</p>
+          </div>
+          <div class="fixed-wrap">
+            <div class="fixed">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div id="#contacts" class="offset">
+        <div class="text-center">
+          <div class="narrow">
+        <form action="." method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type='submit'>Send</button>
+          </form>
+      </div>
+    </div>
+    </div>
+    <footer>
+      <div class="row justify-content-center">
+        <div class="col-md-5 text-center">
+          <p class="lead">&copy; 2019 Edgar Sidorov</p>
+        </div>
+      </div>
+    </footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
